@@ -1,9 +1,10 @@
 import { Router } from "express";
-import CadastroLink from "../controllers/cadastroLinkController";
+import CadastroLink from "../controllers/CadastroLinkController";
+import ObterLink from "../controllers/ObterLinkController";
 
 const route = Router();
 
 route.post("/", new CadastroLink().controlador);
-route.get("/:identificador");
+route.get("/:identificador", new ObterLink().controlador);
 
 export default route;
