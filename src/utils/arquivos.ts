@@ -14,3 +14,25 @@ export async function adicionarDados(link: Link) {
   dados.push(link);
   await fs.writeFile(caminhoData, JSON.stringify(dados, null, "\t"));
 }
+
+export async function contarVisitas(identificador: string) {
+  const dados = await lerDados();
+
+  const link = dados.find((link) => {
+    return link.identificador === identificador;
+  });
+
+  const linkComVisita: Link = {
+    identificador: link!.identificador,
+    url: link!.url,
+    visitas: link!.visitas + 1,
+  };
+
+  const indice = dados.findIndex((link) => {
+    return link.identificador === identificador;
+  });
+
+  dados.splice(indice, 1, linkComVisita);
+
+  await fs.writeFile(caminhoData, JSON.stringify(dados, null, "\t"));
+}
