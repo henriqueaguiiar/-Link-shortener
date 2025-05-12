@@ -1,7 +1,12 @@
 [
-  {
-    "identificador": "cubosacademy",
-    "url": "https://cubosa.cademy",
-    "visitas": 0
-  }
+	{
+		"identificador": "cubosacademy",
+		"url": "https://cubosa.cademy",
+		"visitas": 0
+	},
+	{
+		"identificador": "henrique",
+		"url": "https://henriqueaguiar.com.br",
+		"visitas": 0
+	}
 ]
